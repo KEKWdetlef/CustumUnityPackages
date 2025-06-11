@@ -1,0 +1,17 @@
+{
+  "name": "com.kekw-detlef.",
+  "version": "0.1.1",
+  "displayName": "Scene Management",
+  "description": "Manages Scenes",
+  "unity": "6000.0",
+  "dependencies": 
+  {
+    "com.kekw-detlef.serializables": "https://github.com/KEKWdetlef/CustumUnityPackages.git?path=serializables",
+    "com.unity.addressables": "2.4.6"
+  },
+  "author": 
+  {
+    "name": "Tom Schüler",
+    "email": "tom.schueler01@t-online.de"
+  }
+}
