@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Utils.Serializable
+namespace KekwDetlef.Serializables
 {
     [Serializable]
     public class SerializableDictionary<KeyType, ValueType> : ISerializationCallbackReceiver, IDictionary<KeyType, ValueType> where KeyType : notnull
