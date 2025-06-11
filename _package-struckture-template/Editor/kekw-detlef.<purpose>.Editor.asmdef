@@ -1,0 +1,15 @@
+{
+    "name": "kekw-detlef.<purpose>.Editor",
+    "references": [
+        "kekw-detlef.<purpose>.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
