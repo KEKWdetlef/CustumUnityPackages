@@ -182,8 +182,7 @@ namespace KekwDetlef.SceneManagement.Editor
 
         private void CookSceneMap(List<IndexedScene> uiScenes, List<IndexedScene> worldScenes, string dictionaryPath)
         {
-            Debug.LogError(dictionaryPath);
-            if (dictionaryPath == string.Empty)
+            if (dictionaryPath == null || dictionaryPath == string.Empty)
             {
                 Debug.Log("Select Path to generate to");
                 return;
