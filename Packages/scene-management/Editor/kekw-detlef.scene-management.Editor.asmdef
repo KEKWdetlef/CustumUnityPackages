@@ -5,6 +5,9 @@
         "Unity.Addressables",
         "kekw-detlef.serializables.Runtime"
     ],
+    "optionalReferences": [
+        "kekw-detlef.scene-management.user-defined"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

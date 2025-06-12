@@ -222,7 +222,12 @@ namespace KekwDetlef.SceneManagement.Editor
 
             using (StreamWriter sw = new(filePath, false))
             {
-                sw.Write(final);
+                sw.Write(final.ToString());
+            }
+
+            using (StreamWriter sw = new(dictionaryPath + "kekw-detlef.scene-management.user-defined.asmdef", false))
+            {
+                sw.Write("{\n   \"name\": \"kekw-detlef.scene-management.user-defined \",\n   \"references\": [\n      \"Unity.Addressables\",\n      \"Unity.Addressables\",\n      \"kekw-detlef.serializables.Runtime\"\n   ],\n   \"optionalReferences\": [\n      \"kekw-detlef.scene-management.user-defined\"\n   ],\n   \"includePlatforms\": [],\n   \"excludePlatforms\": [],\n   \"allowUnsafeCode\": false,\n   \"overrideReferences\": false,\n   \"precompiledReferences\": [],\n   \"autoReferenced\": true,\n   \"defineConstraints\": [],\n   \"versionDefines\": [],\n   \"noEngineReferences\": false\n}");
             }
 
             var target = NamedBuildTarget.Standalone;
@@ -394,7 +399,10 @@ namespace KekwDetlef.SceneManagement.Editor
 
             EditorGUI.EndDisabledGroup();
             EditorGUI.indentLevel--;
+
         }
     }
 }
+
+
 
