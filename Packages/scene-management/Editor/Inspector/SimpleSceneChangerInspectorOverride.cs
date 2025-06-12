@@ -25,7 +25,7 @@ namespace KekwDetlef.SceneManagement.Editor
             EditorGUILayout.PropertyField(sceneTypeProp);
             EditorGUILayout.PropertyField(loadModeProp);
 
-            if ((SimpleSceneChanger.SceneTypeToLoad)sceneTypeProp.enumValueIndex == SimpleSceneChanger.SceneTypeToLoad.UI)
+            if ((SceneType)sceneTypeProp.enumValueIndex == SceneType.UI)
             {
                 EditorGUILayout.PropertyField(uiSceneInfoProp);
             }

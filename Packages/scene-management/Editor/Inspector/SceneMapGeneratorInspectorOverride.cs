@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using KekwDetlef.Utils.Serializables;
+using UnityEditor.Build;
 
 namespace KekwDetlef.SceneManagement.Editor
 {
@@ -187,6 +188,7 @@ namespace KekwDetlef.SceneManagement.Editor
                 Debug.Log("Select Path to generate to");
                 return;
             }
+
             string filePath = dictionaryPath + sceneMapFileName;
             
             string uiSceneEnumStringFormated = FormatToEnumString(uiScenes);
@@ -223,6 +225,14 @@ namespace KekwDetlef.SceneManagement.Editor
                 sw.Write(final);
             }
 
+            var target = NamedBuildTarget.Standalone;
+            string defines = PlayerSettings.GetScriptingDefineSymbols(target);
+            if (!defines.Contains("SCENE_MAP_GENERATED"))
+            {
+                defines += ";SCENE_MAP_GENERATED";
+                PlayerSettings.SetScriptingDefineSymbols(target, defines);
+            }
+
             AssetDatabase.Refresh();
         }
 
@@ -246,6 +256,8 @@ namespace KekwDetlef.SceneManagement.Editor
             {
                 string sceneName = indexedScene.scene.editorAsset.name.ToUpper();
 
+                // TODO: sanitise string
+
                 final.Append("\n        ,{ " + enumName + "." + sceneName + ", new(" + '"' + indexedScene.scene.AssetGUID + '"' + ") }");
             }
 
@@ -260,6 +272,9 @@ namespace KekwDetlef.SceneManagement.Editor
             foreach (IndexedScene indexedScene in indexedScenes)
             {
                 string sceneName = indexedScene.scene.editorAsset.name.ToUpper();
+
+                // TODO: sanitise string
+
                 final.Append($"\n        ,{sceneName} = {indexedScene.sceneIndex}");
             }
 

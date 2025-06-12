@@ -8,7 +8,7 @@ using KekwDetlef.Utils.Serializables;
 namespace KekwDetlef.SceneManagement.Editor
 {
     // This Class uses a Editor ovverride script.
-    [CreateAssetMenu(fileName = "SceneMapGenerator", menuName = "Scriptable Objects/SceneMap/SceneMapGenerator")]
+    [CreateAssetMenu(fileName = "SceneMapGenerator", menuName = "SceneMapGenerator")]
     public class SceneMapGenerator : ScriptableObject
     {
         public List<IndexedScene> uiScenes = new(), worldScenes = new();

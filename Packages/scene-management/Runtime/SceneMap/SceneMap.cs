@@ -1,5 +1,7 @@
 // This File is Automaticaly Generated. If you modify this file it will most likely be overwritten. 
 
+#if !SCENE_MAP_GENERATED
+
 using System.Collections.Generic;
 using UnityEngine.AddressableAssets;
 
@@ -28,3 +30,5 @@ namespace KekwDetlef.SceneManagement.Runtime
         };
     }
 }
+
+#endif

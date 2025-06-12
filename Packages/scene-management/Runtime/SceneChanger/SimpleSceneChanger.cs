@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -8,13 +9,9 @@ namespace KekwDetlef.SceneManagement.Runtime
 {
     public class SimpleSceneChanger : MonoBehaviour
     {
-        public enum SceneTypeToLoad
-        {
-            UI = 0,
-            World = 1
-        }
+        
 
-        [SerializeField] private SceneTypeToLoad sceneType;
+        [SerializeField] private SceneType sceneType;
         [SerializeField] private LoadSceneMode loadMode; 
         [SerializeField] private UISceneInfo uiSceneInfo;
         [SerializeField] private WorldSceneInfo worldSceneInfo;
@@ -31,11 +28,11 @@ namespace KekwDetlef.SceneManagement.Runtime
             AsyncOperationHandle<SceneInstance> handle;
             AssetReference sceneAsset;
 
-            if (sceneType == SceneTypeToLoad.UI)
+            if (sceneType == SceneType.UI)
             {
                 sceneAsset = SceneMap.uiSceneMap[uiSceneInfo.type];
                 handle = Addressables.LoadSceneAsync(sceneAsset, loadMode, true, uiSceneInfo.priority);
-                
+
             }
             else // -> sceneType = SceneTypeToLoad.UI
             {
