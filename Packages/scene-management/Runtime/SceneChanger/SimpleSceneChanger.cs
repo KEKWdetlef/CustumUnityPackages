@@ -1,11 +1,10 @@
-using SceneManagement.Misc;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 
-namespace SceneManagement.Runtime
+namespace KekwDetlef.SceneManagement.Runtime
 {
     public class SimpleSceneChanger : MonoBehaviour
     {

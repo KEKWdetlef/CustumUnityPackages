@@ -1,0 +1,17 @@
+{
+    "name": "kekw-detlef.scene-management.Editor",
+    "references": [
+        "kekw-detlef.scene-management.Runtime",
+        "Unity.Addressables",
+        "kekw-detlef.serializables.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

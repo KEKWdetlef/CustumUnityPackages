@@ -1,7 +1,7 @@
 using System;
 using UnityEngine.AddressableAssets;
 
-namespace SceneManagement.Editor
+namespace KekwDetlef.SceneManagement.Editor
 {
     [Serializable]
     public struct IndexedScene

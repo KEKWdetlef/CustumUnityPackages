@@ -3,9 +3,9 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using Utils.Serializable;
+using KekwDetlef.Utils.Serializables;
 
-namespace SceneManagement.Editor
+namespace KekwDetlef.SceneManagement.Editor
 {
     // This Class uses a Editor ovverride script.
     [CreateAssetMenu(fileName = "SceneMapGenerator", menuName = "Scriptable Objects/SceneMap/SceneMapGenerator")]

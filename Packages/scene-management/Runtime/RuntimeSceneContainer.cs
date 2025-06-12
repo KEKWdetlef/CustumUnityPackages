@@ -3,7 +3,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 
-namespace SceneManagement.Runtime
+namespace KekwDetlef.SceneManagement.Runtime
 {
     public static class RuntimeSceneContainer
     {

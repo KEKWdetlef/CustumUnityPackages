@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace SceneManagement.Misc
+namespace KekwDetlef.SceneManagement.Runtime
 {
     [Serializable]
     public struct UISceneInfo

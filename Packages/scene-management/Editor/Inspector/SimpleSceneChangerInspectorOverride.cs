@@ -1,7 +1,7 @@
-using SceneManagement.Runtime;
+using KekwDetlef.SceneManagement.Runtime;
 using UnityEditor;
 
-namespace SceneManagement.Editor
+namespace KekwDetlef.SceneManagement.Editor
 {
     [CustomEditor(typeof(SimpleSceneChanger))]
     public class SimpleSceneChangerInspectorOverride : UnityEditor.Editor

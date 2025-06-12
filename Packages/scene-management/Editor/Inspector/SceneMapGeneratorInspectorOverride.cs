@@ -5,9 +5,9 @@ using System.Text;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using Utils.Serializable;
+using KekwDetlef.Utils.Serializables;
 
-namespace SceneManagement.Editor
+namespace KekwDetlef.SceneManagement.Editor
 {
     [CustomEditor(typeof(SceneMapGenerator))]
     public class SceneMapGeneratorInspectorOverride : UnityEditor.Editor

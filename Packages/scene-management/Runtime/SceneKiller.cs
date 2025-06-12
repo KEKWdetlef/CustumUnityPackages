@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-public class SceneKiller : MonoBehaviour
+namespace KekwDetlef.SceneManagement.Runtime
 {
-    public void KillScenes()
+    public class SceneKiller : MonoBehaviour
     {
-        
+        public void KillScenes()
+        {
+
+        }
     }
 }
