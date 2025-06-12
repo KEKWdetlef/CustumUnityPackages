@@ -6,7 +6,7 @@
   "unity": "6000.0",
   "dependencies": 
   {
-    "com.kekw-detlef.serializables": "https://github.com/KEKWdetlef/CustumUnityPackages.git?path=Packages/serializables",
+    "com.kekw-detlef.serializables": "git+https://github.com/KEKWdetlef/CustumUnityPackages.git?path=Packages/serializables",
     "com.unity.addressables": "2.4.6"
   },
   "author": 
