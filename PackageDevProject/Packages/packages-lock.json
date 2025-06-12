@@ -5,7 +5,7 @@
       "depth": 0,
       "source": "local",
       "dependencies": {
-        "com.kekw-detlef.serializables": "git+https://github.com/KEKWdetlef/CustumUnityPackages.git?path=Packages/serializables",
+        "com.kekw-detlef.serializables": "0.1.1",
         "com.unity.addressables": "2.4.6"
       }
     },
