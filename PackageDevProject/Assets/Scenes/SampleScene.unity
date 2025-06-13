@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 137564056}
   - component: {fileID: 137564055}
   - component: {fileID: 137564054}
-  - component: {fileID: 137564053}
+  - component: {fileID: 137564057}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -261,26 +261,6 @@ RectTransform:
   m_AnchoredPosition: {x: -880, y: -525}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &137564053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 137564051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a4ced79e6aa2402cad37dc9c994821e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneType: 0
-  loadMode: 0
-  uiSceneInfo:
-    type: 0
-    priority: 100
-  worldSceneInfo:
-    type: 0
-    priority: 0
 --- !u!114 &137564054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,10 +305,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 137564053}
-        m_TargetAssemblyTypeName: KekwDetlef.SceneManagement.Runtime.SimpleSceneLoader,
-          kekw-detlef.scene-management.Runtime
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 137564057}
+        m_TargetAssemblyTypeName: KekwDetlef.SceneManagement.MultipleSceneChanger,
+          Assembly-CSharp
+        m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -376,6 +356,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137564051}
   m_CullTransparentMesh: 1
+--- !u!114 &137564057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137564051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c7540d3b1744a42b63e49200a9e762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiSceneInfo:
+  - type: 1
+    priority: 100
+  - type: 1
+    priority: 100
+  worldSceneInfo: []
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0

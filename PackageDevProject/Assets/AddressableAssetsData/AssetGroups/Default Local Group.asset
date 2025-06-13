@@ -15,23 +15,28 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: d6dbc249632f6475490d959bd61137d1
   m_SerializeEntries:
-  - m_GUID: 0c39c8ae6b8254ddeb99682f9199c793
-    m_Address: Assets/Scenes/SampleScene 4.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3a347ee97cd93405285bbab72cec1876
+  - m_GUID: 5c40993247c683445ae0dba8b6cd4363
     m_Address: Assets/Scenes/SampleScene 2.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5eb7f44fcea49459da153016d9dd4f0e
+  - m_GUID: 8502e924f029c0246905d54b0003c3d4
+    m_Address: Assets/Scenes/SampleScene 4.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7ce23613dbe2974a848af2591a0791f
     m_Address: Assets/Scenes/SampleScene 3.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f4d65aa79c45a41339643d106e08617b
+  - m_GUID: c15f7aeb7ba458d4dad8578fa6002678
     m_Address: Assets/Scenes/SampleScene 1.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea271965b0f1ab54a9632224e81a4820
+    m_Address: Assets/Scenes/SampleScene 5.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

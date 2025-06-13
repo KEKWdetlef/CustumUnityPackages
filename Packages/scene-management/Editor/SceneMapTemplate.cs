@@ -11,7 +11,7 @@ namespace KekwDetlef.SceneManagement.Editor
 
             final.Append("// This File is Automaticaly Generated. If you modify this file it will most likely be overwritten. \n\n"); // ForeWord
             final.Append("using System.Collections.Generic; \nusing UnityEngine.AddressableAssets;\n\n"); // Using directives
-            final.Append("namespace KekwDetlef.SceneManagemet.Runtime\n{\n");
+            final.Append("namespace KekwDetlef.SceneManagement\n{\n");
             final.Append("    public static class SceneMap\n    {\n"); // class
             final.Append("        public enum UIScene\n        {\n           "); // ui enum start
             final.Append(uiSceneEnumStringFormated);

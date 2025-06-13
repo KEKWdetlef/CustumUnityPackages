@@ -14,42 +14,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiScenes:
   - scene:
-      m_AssetGUID: f4d65aa79c45a41339643d106e08617b
+      m_AssetGUID: c15f7aeb7ba458d4dad8578fa6002678
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
     sceneIndex: 1
   - scene:
-      m_AssetGUID: 3a347ee97cd93405285bbab72cec1876
+      m_AssetGUID: 5c40993247c683445ae0dba8b6cd4363
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
     sceneIndex: 2
   - scene:
-      m_AssetGUID: 5eb7f44fcea49459da153016d9dd4f0e
+      m_AssetGUID: a7ce23613dbe2974a848af2591a0791f
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
     sceneIndex: 3
   - scene:
-      m_AssetGUID: 0c39c8ae6b8254ddeb99682f9199c793
+      m_AssetGUID: 8502e924f029c0246905d54b0003c3d4
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
     sceneIndex: 4
+  - scene:
+      m_AssetGUID: ea271965b0f1ab54a9632224e81a4820
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    sceneIndex: 5
   worldScenes: []
   rememberedGUID:
     keys:
-    - f4d65aa79c45a41339643d106e08617b
-    - 3a347ee97cd93405285bbab72cec1876
-    - 5eb7f44fcea49459da153016d9dd4f0e
-    - 0c39c8ae6b8254ddeb99682f9199c793
-    values: 01000000020000000300000004000000
+    - c15f7aeb7ba458d4dad8578fa6002678
+    - 5c40993247c683445ae0dba8b6cd4363
+    - a7ce23613dbe2974a848af2591a0791f
+    - 8502e924f029c0246905d54b0003c3d4
+    - ea271965b0f1ab54a9632224e81a4820
+    values: 0100000002000000030000000400000005000000
   rootScene: {fileID: 102900000, guid: 99c9720ab356a0642a771bea13969a05, type: 3}
-  directoryPathSceneMap: Assets/
+  directory: Assets
+  directoryGUID: 3602e38d76a50294caa6059d9e6ed59b
   uniqueWorldIdentifier: 0
-  uniqueUIIdentifier: 4
+  uniqueUIIdentifier: 5

@@ -1,1 +1,1 @@
-this manages scenes
+This is a read me.
