@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -7,10 +6,8 @@ using UnityEngine.SceneManagement;
 
 namespace KekwDetlef.SceneManagement.Runtime
 {
-    public class SimpleSceneChanger : MonoBehaviour
+    public class SimpleSceneLoader : MonoBehaviour
     {
-        
-
         [SerializeField] private SceneType sceneType;
         [SerializeField] private LoadSceneMode loadMode; 
         [SerializeField] private UISceneInfo uiSceneInfo;
@@ -23,24 +20,29 @@ namespace KekwDetlef.SceneManagement.Runtime
         public string NO_worldSceneInfo => nameof(worldSceneInfo);
 #endif
 
-        public void ChangeScene()
+        public void LoadScene()
         {
             AsyncOperationHandle<SceneInstance> handle;
             AssetReference sceneAsset;
+
+            if (loadMode == LoadSceneMode.Single)
+            {
+                RuntimeSceneContainer.activeUISceneMap.Clear();
+                RuntimeSceneContainer.activeWorldSceneMap.Clear();
+            }
 
             if (sceneType == SceneType.UI)
             {
                 sceneAsset = SceneMap.uiSceneMap[uiSceneInfo.type];
                 handle = Addressables.LoadSceneAsync(sceneAsset, loadMode, true, uiSceneInfo.priority);
-
+                RuntimeSceneContainer.activeUISceneMap.Add(uiSceneInfo.type, handle);
             }
             else // -> sceneType = SceneTypeToLoad.UI
             {
                 sceneAsset = SceneMap.worldSceneMap[worldSceneInfo.type];
                 handle = Addressables.LoadSceneAsync(sceneAsset, loadMode, true, worldSceneInfo.priority);
+                RuntimeSceneContainer.activeWorldSceneMap.Add(worldSceneInfo.type, handle);
             }
-            
-            RuntimeSceneContainer.activeSceneMap.Add(sceneAsset, handle);
         }
     }
 }

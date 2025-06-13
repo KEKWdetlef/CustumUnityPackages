@@ -6,7 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using KekwDetlef.Utils.Serializables;
-using UnityEditor.Build;
+using System.Text.RegularExpressions;
 
 namespace KekwDetlef.SceneManagement.Editor
 {
@@ -225,21 +225,45 @@ namespace KekwDetlef.SceneManagement.Editor
                 sw.Write(final.ToString());
             }
 
-            using (StreamWriter sw = new(dictionaryPath + "kekw-detlef.scene-management.user-defined.asmdef", false))
-            {
-                sw.Write("{\n   \"name\": \"kekw-detlef.scene-management.user-defined \",\n   \"references\": [\n      \"Unity.Addressables\",\n      \"Unity.Addressables\",\n      \"kekw-detlef.serializables.Runtime\"\n   ],\n   \"optionalReferences\": [\n      \"kekw-detlef.scene-management.user-defined\"\n   ],\n   \"includePlatforms\": [],\n   \"excludePlatforms\": [],\n   \"allowUnsafeCode\": false,\n   \"overrideReferences\": false,\n   \"precompiledReferences\": [],\n   \"autoReferenced\": true,\n   \"defineConstraints\": [],\n   \"versionDefines\": [],\n   \"noEngineReferences\": false\n}");
-            }
-
-            var target = NamedBuildTarget.Standalone;
-            string defines = PlayerSettings.GetScriptingDefineSymbols(target);
-            if (!defines.Contains("SCENE_MAP_GENERATED"))
-            {
-                defines += ";SCENE_MAP_GENERATED";
-                PlayerSettings.SetScriptingDefineSymbols(target, defines);
-            }
-
             AssetDatabase.Refresh();
         }
+
+        private string Sanitise(string toSanitise)
+        {
+            if (string.IsNullOrWhiteSpace(toSanitise))
+            {
+                throw new ArgumentException("Input cannot be null, empty, or whitespace.", nameof(toSanitise));
+            }
+
+            string sanitized = Regex.Replace(toSanitise, @"[^a-zA-Z0-9_]", "_");
+
+            if (char.IsDigit(sanitized[0]))
+            {
+                sanitized = "_" + sanitized;
+            }
+
+            string[] csharpKeywords = new string[]
+            {
+                "abstract", "as", "base", "bool", "break", "byte", "case", "catch", "char",
+                "checked", "class", "const", "continue", "decimal", "default", "delegate", "do",
+                "double", "else", "enum", "event", "explicit", "extern", "false", "finally",
+                "fixed", "float", "for", "foreach", "goto", "if", "implicit", "in", "int",
+                "interface", "internal", "is", "lock", "long", "namespace", "new", "null",
+                "object", "operator", "out", "override", "params", "private", "protected",
+                "public", "readonly", "ref", "return", "sbyte", "sealed", "short", "sizeof",
+                "stackalloc", "static", "string", "struct", "switch", "this", "throw", "true",
+                "try", "typeof", "uint", "ulong", "unchecked", "unsafe", "ushort", "using",
+                "virtual", "void", "volatile", "while"
+            };
+
+            if (Array.Exists(csharpKeywords, keyword => keyword == sanitized))
+            {
+                sanitized = "_" + sanitized;
+            }
+
+            return sanitized;
+        }
+
 
         private string FormatToDictionaryString(List<IndexedScene> indexedScenes, SceneType type)
         {
@@ -259,11 +283,12 @@ namespace KekwDetlef.SceneManagement.Editor
 
             foreach (IndexedScene indexedScene in indexedScenes)
             {
-                string sceneName = indexedScene.scene.editorAsset.name.ToUpper();
+                string sceneName = indexedScene.scene.editorAsset.name;
 
-                // TODO: sanitise string
+                 sceneName = Sanitise(sceneName);
+                 sceneName = sceneName.ToUpper();
 
-                final.Append("\n        ,{ " + enumName + "." + sceneName + ", new(" + '"' + indexedScene.scene.AssetGUID + '"' + ") }");
+                final.Append("\n            ,{ " + enumName + "." + sceneName + ", new(" + '"' + indexedScene.scene.AssetGUID + '"' + ") }");
             }
 
             return final.ToString();
@@ -276,11 +301,12 @@ namespace KekwDetlef.SceneManagement.Editor
 
             foreach (IndexedScene indexedScene in indexedScenes)
             {
-                string sceneName = indexedScene.scene.editorAsset.name.ToUpper();
+                string sceneName = indexedScene.scene.editorAsset.name;
 
-                // TODO: sanitise string
+                sceneName = Sanitise(sceneName);
+                sceneName = sceneName.ToUpper();
 
-                final.Append($"\n        ,{sceneName} = {indexedScene.sceneIndex}");
+                final.Append($"\n            ,{sceneName} = {indexedScene.sceneIndex}");
             }
 
             return final.ToString();

@@ -3,14 +3,14 @@ using UnityEditor;
 
 namespace KekwDetlef.SceneManagement.Editor
 {
-    [CustomEditor(typeof(SimpleSceneChanger))]
+    [CustomEditor(typeof(SimpleSceneLoader))]
     public class SimpleSceneChangerInspectorOverride : UnityEditor.Editor
     {
         SerializedProperty sceneTypeProp, uiSceneInfoProp, worldSceneInfoProp, loadModeProp;
 
         void OnEnable()
         {
-            SimpleSceneChanger me = (SimpleSceneChanger)target;
+            SimpleSceneLoader me = (SimpleSceneLoader)target;
 
             sceneTypeProp = serializedObject.FindProperty(me.NO_sceneType);
             loadModeProp = serializedObject.FindProperty(me.NO_loadMode);
